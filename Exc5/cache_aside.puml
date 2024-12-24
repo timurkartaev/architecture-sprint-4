@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'autonumber
+
+MES -> Cache: (1) Get cache value by key
+Cache -> MES: (2) Cache value
+
+MES -> Cache: (1) )Get cache value by key
+Cache -> MES: (2) Cache value does not exists
+
+MES -> Database: (3) Retrieve data from DB
+Database -> MES: (4) Requested data
+
+MES <- Cache: (5) Save data to cache with key
+@enduml
